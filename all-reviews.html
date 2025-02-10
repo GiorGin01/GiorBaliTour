@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GIOR TRANSPORT - Semua Review</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Font Awesome dan Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header yang sama dengan index.html -->
+  <header>
+    <nav>
+      <div class="logo">
+        Gior<span>Transport</span>.
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html#home">HOME</a></li>
+        <li><a href="index.html#rental">RENTAL</a></li>
+        <li><a href="index.html#review">REVIEW</a></li>
+        <li><a href="index.html#about">ABOUT</a></li>
+        <li><a href="index.html#contact">CONTACT</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="language-selector">
+          <select id="language">
+            <option value="id">ID</option>
+            <option value="en">EN</option>
+          </select>
+        </div>
+        <div class="menu-toggle" aria-label="Toggle navigation menu" onclick="toggleMenu()">
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Konten All Reviews -->
+  <section id="all-reviews" class="section">
+    <div class="container">
+      <h2>Semua Review Pelanggan</h2>
+      <p class="total-reviews">
+        Total Review: <strong>700+</strong>
+      </p>
+      <!-- Filter Reviews by Language -->
+      <div class="review-filter">
+        <label for="languageFilter">Filter by Language: </label>
+        <select id="languageFilter">
+          <option value="all">All</option>
+          <option value="en">English</option>
+          <option value="ms">Malay</option>
+          <option value="zh">Chinese</option>
+          <option value="ko">Korean</option>
+          <option value="id">Indonesian</option>
+        </select>
+      </div>
+      <div class="reviews" id="allReviewsContainer"></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="links">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#rental">Rental</a>
+      <a href="index.html#review">Review</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+    <div class="credit">
+      <p>
+        Created By
+        <span id="creator-name" onclick="window.location.href='https://instagram.com/gior.malik'">GiorMalik</span> | &copy;2019.
+      </p>
+    </div>
+    <!-- Social links telah dihapus -->
+  </footer>
+
+  <script src="js/reviews.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    function displayAllReviews() {
+    const allReviewsContainer = document.getElementById('allReviewsContainer');
+    const filterValue = document.getElementById('languageFilter').value;
+    let filteredReviews = reviews;
+    if (filterValue !== 'all') {
+    filteredReviews = reviews.filter(review => review.language === filterValue);
+    }
+    if (allReviewsContainer && typeof reviews !== 'undefined') {
+    allReviewsContainer.innerHTML = filteredReviews.map(review => `
+    <div class="review-item">
+    <div class="review-rating">
+    ${generateStarRating(review.rating)}
+    <span>${review.rating}</span>
+    </div>
+    <p class="review-comment">"${review.comment}"</p>
+    <p class="review-author">- ${review.name}</p>
+    </div>
+    `).join('');
+    }
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+    const languageFilter = document.getElementById('languageFilter');
+    languageFilter.addEventListener('change', displayAllReviews);
+    displayAllReviews();
+    });
+  </script>
+</body>
+</html>

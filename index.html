@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GIOR BALI TOUR - Layanan Rental Mobil Terbaik di Bali. Sewa mobil dengan harga terjangkau dan pelayanan profesional.">
+  <meta name="keywords" content="rental mobil bali, sewa mobil bali, gior bali tour, rental mobil murah bali">
+  <meta name="author" content="GIOR BALI TOUR">
+  <title>GIOR TRANSPORT - Car Rental And Tour</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Menggunakan Font Awesome versi 6 untuk ikon modern -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        Gior<span>Transport</span>.
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#rental">RENTAL</a></li>
+        <li><a href="#review">REVIEW</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="language-selector">
+          <select id="language">
+            <option value="id">ID</option>
+            <option value="en">EN</option>
+          </select>
+        </div>
+        <div class="menu-toggle" aria-label="Toggle navigation menu" onclick="toggleMenu()">
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="cars-slideshow">
+      <div class="slide active" style="background-image: url('images/hero1.jpg')"></div>
+      <div class="slide" style="background-image: url('images/hero2.jpg')"></div>
+      <div class="slide" style="background-image: url('images/hero3.jpg')"></div>
+    </div>
+    <div class="hero-content">
+      <h1 class="animate-text">Bali Car Rental Service</h1>
+      <p class="animate-text delay-1">
+        Include with a Driver
+      </p>
+      <div class="cta-container animate-text delay-2">
+        <a href="#rental" class="cta-button">View All Cars <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rental Section -->
+  <section id="rental" class="section">
+    <div class="container">
+      <h2>Paket Rental Mobil</h2>
+      <!-- Container slider animasi mobil telah dihapus -->
+      <div class="car-grid" id="carList"></div>
+    </div>
+  </section>
+
+  <!-- Review Section (termasuk Review Form) -->
+  <section id="review" class="section">
+    <div class="container">
+      <h2>Review Pelanggan</h2>
+      <p class="total-reviews">
+        Total Review: <strong>700+</strong>
+      </p>
+      <a href="all-reviews.html" id="viewAllReviews" class="view-all-link">Lihat Semua Review</a>
+      <div class="reviews" id="reviewsContainer"></div>
+      <!-- Review Form dengan teks dan isian terpusat -->
+      <div class="review-form">
+        <h3>Tambah Review Anda</h3>
+        <form id="reviewForm">
+          <input type="text" name="name" placeholder="Nama" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <textarea name="comment" placeholder="Komentar" required></textarea>
+          <select name="rating" required>
+            <option value="5">★★★★★</option>
+            <option value="4">★★★★☆</option>
+            <option value="3">★★★☆☆</option>
+            <option value="2">★★☆☆☆</option>
+            <option value="1">★☆☆☆☆</option>
+          </select>
+          <button type="submit">Kirim Review</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section dengan teks terpusat dan gambar dengan sudut membulat -->
+  <section id="about" class="about">
+    <div class="container">
+      <img src="images/hero1.jpg" alt="Tentang Kami" class="about-banner">
+      <h2>Tentang Kami</h2>
+      <p class="about-description">
+        Kami mengutamakan kualitas, inovasi, dan pelayanan prima untuk memberikan pengalaman terbaik bagi setiap pelanggan setia kami, selalu terpercaya.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Hubungi Kami Sekarang!</h2>
+    <p>
+      Kami siap membantu dan melayani kebutuhan Anda dengan sepenuh hati, memberikan solusi terbaik untuk pengalaman yang luar biasa.
+    </p>
+    <div class="container">
+      <!-- Map dibungkus dalam container -->
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=GUEST%20HOUSE%20PURI%20KENCANA%2C%20Kuta%2C%20Kabupaten%20Badung%2C%20Bali%2C%20Indonesia&maptype=roadmap" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
+      </div>
+      <!-- Contact Us dengan title dan link yang dapat diklik -->
+      <div class="contact-us">
+        <h3>Contact Us</h3>
+        <p>
+          <i class="fa fa-map-marker-alt" aria-hidden="true"></i>
+          <a href="https://maps.app.goo.gl/4g1XabZ4URC8w2ax6" target="_blank">
+            Jalan Raya Kuta
+          </a>
+        </p>
+        <p>
+          <i class="fab fa-whatsapp" aria-hidden="true"></i>
+          <a href="https://wa.me/6285854965523" target="_blank">
+            +6285854965523
+          </a>
+        </p>
+        <p>
+          <i class="fa fa-envelope" aria-hidden="true"></i>
+          <a href="mailto:giorginomalik@gmail.com" target="_blank">
+            giorginomalik@gmail.com
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="links">
+      <a href="#home">Home</a>
+      <a href="#rental">Rental</a>
+      <a href="#review">Review</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="credit">
+      <p>
+        Created By
+        <span id="creator-name" onclick="window.location.href='https://instagram.com/gior.malik'">GiorMalik</span> | &copy;2019.
+      </p>
+    </div>
+    <!-- Social links telah dihapus -->
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/reviews.js"></script>
+  <script src="js/reviewForm.js"></script>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+    { pageLanguage: 'id', layout: google.translate.TranslateElement.InlineLayout.SIMPLE },
+    'google_translate_element'
+    );
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
